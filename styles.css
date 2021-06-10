@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+:root {
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--lightGrayishBlue);
+    letter-spacing: .03px;
+}
+
+h3 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 11px;
+    opacity: 50%;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 13px;
+    opacity: 70%;
+    line-height: 18px;
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    margin: 250px auto 60px;
+    max-width: 1100px;
+}
+
+.cards {
+    display: grid;
+    grid-template-areas: "card-1 card-1 card-2 card-5" "card-3 card-4 card-4 card-5";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+}
+
+.card {
+    padding: 26px 32px;
+    border-radius: 8px;
+    box-shadow: 40px 60px 50px -47px rgb(72 85 106 / 25%);
+}
+
+.card-1 {
+    grid-area: card-1;
+    background-color: var(--moderateViolet);
+    color: white;
+}
+
+.card-1>img {
+    position: absolute;
+    top: 0;
+    right: 80px;
+}
+
+.card-1, .card-1 .info, .card-1 h2, .card-1 p {
+    position: relative;
+}
+
+.card-2 {
+    grid-area: card-2;
+    background-color: var(--veryDarkGrayishBlue);
+    color: white;
+}
+
+.card-3 {
+    grid-area: card-3;
+    background-color: var(--white);
+    color: var(--veryDarkGrayishBlue);
+}
+
+.card-4 {
+    grid-area: card-4;
+    background-color: var(--veryDarkBlackishBlue);
+    color: var(--white);
+}
+
+.card-5 {
+    grid-area: card-5;
+    background-color: var(--white);
+    color: var(--veryDarkGrayishBlue);
+}
+
+.info {
+    display: flex;
+}
+
+.info img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+
+.border-purple {
+    border: 2px solid var(--moderateViolet);
+}
+
+.border-light-purple {
+    border: 2px solid #A775F1;
+}
+
+.border-gray {
+    border: 2px solid var(--lightGray);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.attribution a {
+    color: var(--moderateViolet);
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin: 60px auto 60px;
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 500px;
+    }
+    .cards {
+        grid-template-areas: "card-1 card-1" "card-2 card-3" "card-4 card-4" "card-5 card-5";
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+}
+
+@media(max-width: 500px){
+    .container {
+        margin: 35px auto 60px;
+        max-width: 315px;
+    }
+
+    .cards {
+        grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5";
+        grid-template-columns: 1fr;
+    }
+}
